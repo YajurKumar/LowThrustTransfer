@@ -1,5 +1,5 @@
-%% (C) Yajur Kumar, 2015. All rights reserved.
-% v0.2. November 30, 2015
+%% (C) Yajur Kumar, 2018. All rights reserved.
+%v0.5. June 2018.
 %% Program for optimizing the control (specific thrust) for relative coplanar transfer in the orbit
 % The problem is to rendezvous the maneuvering spacecraft with the target 
 % spacecraft while optimizing the overall fuel consumption. Since, the 
@@ -32,8 +32,8 @@ global x0 Vx0 y0 Vy0 xf Vxf yf Vyf
 % Initial Conditions
 x0  = 10;   % in km
 Vx0 = 0.01; % in km/s
-y0  = 2;   % in km
-Vy0 = 0;    % in km/s
+y0  = 0.01;   % in km
+Vy0 = 0.001;    % in km/s
 
 % Final Conditions
 xf  = 0;    % in km
@@ -54,7 +54,7 @@ init = [x0 Vx0 y0 Vy0 0 0 0 0];
 % initial guess for mission time (s)
 tf_guess = 500; 
 
-Nt = 100; % number of data points
+Nt = 10; % number of data points
 
 tau = linspace(0,1,Nt)'; % nondimensionalized time vector
 
